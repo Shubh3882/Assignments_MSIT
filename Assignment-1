@@ -1,0 +1,50 @@
+1.Prime number
+function isprime(number) { 
+if (number <= 1) { return false;}
+     if ( number <= 3 ) { return true;}
+
+const sqrt = Math.sqrt(number);
+  for (let i = 2; i <= sqrt; i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+
+  return true; 
+ }
+
+
+2.Armstrong
+
+function isArmstrongNumber(number) {
+  
+  const numberStr = String(number);
+  const numDigits = numberStr.length;
+
+  let sum = 0;
+  for (let i = 0; i < numDigits; i++) {
+    const digit = parseInt(numberStr[i]);
+    sum += Math.pow(digit, numDigits);
+  }
+
+  
+  return sum === number;
+}
+
+3.Add function
+
+function add() {
+  let sum = 0;
+  for (let i=0 ; i<arguments.length i++) {
+    let arg =arguments[i];
+    if ((typeof arg === 'number' && !isNaN(arg)  && isFinite(arg) ) 
+    {
+      sum += arg;
+    }
+    if (typeof arg === 'string' && !isNaN(parseInt(arg))  && isFinite(parseInt(arg)) ) 
+    {
+      sum += arg;
+    }
+  }
+  return sum;
+}
