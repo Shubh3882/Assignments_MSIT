@@ -1,4 +1,4 @@
-Create add fn
+Q1 Create add fn
 add() - 0
 add(1,2) - 3
 add(1,"2") - 3
@@ -36,7 +36,7 @@ function add(...args) {
 
   return sum;
 }
-	q.5 CONVERTING SAME FUNCTION WITH REST ARGUMENTS
+Q2 CONVERTING SAME FUNCTION WITH REST ARGUMENTS
 const add = (...args) => {
   let sum = 0;
 
@@ -68,8 +68,8 @@ console.log(add(1, "2")); // Output: 3
 console.log(add(1, "one")); // Output: 0
 console.log(add(1, [2, 3, "4"], "1", "one")); // Output: 7 (1 + 2 + 3 + 4 + 1 + 0)
 console.log(add(1, ["one", "two", 3, "4"], one, two, "one", "two")); // Output: 9 (1 + 0 + 0 + 0 + 0 + 0 + 1 + 0)
-q.6
-write a javascript program to display the current day and time in the following order output: today is : day_name current time is: time
+
+Q3 Write a javascript program to display the current day and time in the following order output: today is : day_name current time is: time
 function getCurrentDayAndTime() {
   const now = new Date();
 
@@ -86,7 +86,7 @@ function getCurrentDayAndTime() {
 getCurrentDayAndTime();
 
 
-Q.7 WRITE CURRENT DATE.
+Q.4 WRITE CURRENT DATE.
 function getCurrentDate() { 
 const now = new Date();
  return now.toLocaleDateString("en-US"); 
