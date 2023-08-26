@@ -1,0 +1,65 @@
+1. Create an Array of Salaries, Now do the Sum of Salaries who is greater than 10000.
+Hint : reduce function
+
+2. Get the Max Salary from the Array
+Hint : reduce function
+
+3. Count Those Salaries whose > 10000, note : don't use filter.
+Hint : reduce function
+
+4. Maintain an Array of Employees. (Array of Objects), Now Sort the Employee by Name and Salary.
+
+5. In Employee Salaries add 10% Tax in Each Employee Salary and Store in a new Array, So don't modify the Orginal Array.
+Hint : filter, map
+
+
+Sum of Salaries greater than 10000 using the reduce function:
+const salaries = [15000, 12000, 8000, 18000, 9000, 20000];
+const sumGreaterThan10000 = salaries.reduce((acc, curr) => (curr > 10000 ? acc + curr : acc), 0);
+
+console.log(sumGreaterThan10000); // Output: 53000
+
+Get the Max Salary from the Array using the reduce function:
+const salaries = [15000, 12000, 8000, 18000, 9000, 20000];
+const maxSalary = salaries.reduce((max, curr) => (curr > max ? curr : max), 0);
+
+console.log(maxSalary); // Output: 20000
+
+
+Count Salaries greater than 10000 using the reduce function:
+const salaries = [15000, 12000, 8000, 18000, 9000, 20000];
+const countGreaterThan10000 = salaries.reduce((count, curr) => (curr > 10000 ? count + 1 : count), 0);
+
+console.log(countGreaterThan10000); // Output: 4
+
+
+Sort Employees by Name and Salary:
+const employees = [
+  { name: "John", salary: 50000 },
+  { name: "Alice", salary: 40000 },
+  { name: "Bob", salary: 55000 },
+];
+
+employees.sort((a, b) => {
+  if (a.name !== b.name) {
+    return a.name.localeCompare(b.name);
+  } else {
+    return a.salary - b.salary;
+  }
+});
+
+console.log(employees);
+
+Add 10% Tax to each Employee Salary and store in a new Array using map:
+const employees = [
+  { name: "John", salary: 50000 },
+  { name: "Alice", salary: 40000 },
+  { name: "Bob", salary: 55000 },
+];
+
+const salariesWithTax = employees.map((employee) => ({
+  ...employee,
+  salary: employee.salary * 1.1,
+}));
+
+console.log(salariesWithTax);
