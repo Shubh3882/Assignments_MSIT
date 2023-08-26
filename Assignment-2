@@ -1,0 +1,96 @@
+Create add fn
+add() - 0
+add(1,2) - 3
+add(1,"2") - 3
+add(1, "one") - 0
+add(1,[2,3,"4"], "1", "one")
+add(1,[one, two,3, "4"], one, two, "one", "two"); 
+function one(){
+return 1;
+}
+function two(){
+return "2";
+}
+
+Answer
+function add(...args) {
+  let sum = 0;
+
+  for (const arg of args) {
+    if (typeof arg === "number") {
+      sum += arg;
+    } else if (typeof arg === "string" && !isNaN(arg)) {
+      sum += Number(arg);
+    } else if (Array.isArray(arg)) {
+      sum += arg.reduce((acc, curr) => {
+        if (typeof curr === "number") {
+          return acc + curr;
+        } else if (typeof curr === "string" && !isNaN(curr)) {
+          return acc + Number(curr);
+        } else {
+          return acc;
+        }
+      }, 0);
+    }
+  }
+
+  return sum;
+}
+	q.5 CONVERTING SAME FUNCTION WITH REST ARGUMENTS
+const add = (...args) => {
+  let sum = 0;
+
+  for (const arg of args) {
+    if (typeof arg === "number") {
+      sum += arg;
+    } else if (typeof arg === "string" && !isNaN(arg)) {
+      sum += Number(arg);
+    } else if (Array.isArray(arg)) {
+      sum += arg.reduce((acc, curr) => {
+        if (typeof curr === "number") {
+          return acc + curr;
+        } else if (typeof curr === "string" && !isNaN(curr)) {
+          return acc + Number(curr);
+        } else {
+          return acc;
+        }
+      }, 0);
+    }
+  }
+
+  return sum;
+};
+
+// Test cases
+console.log(add()); // Output: 
+console.log(add(1, 2)); // Output: 3
+console.log(add(1, "2")); // Output: 3
+console.log(add(1, "one")); // Output: 0
+console.log(add(1, [2, 3, "4"], "1", "one")); // Output: 7 (1 + 2 + 3 + 4 + 1 + 0)
+console.log(add(1, ["one", "two", 3, "4"], one, two, "one", "two")); // Output: 9 (1 + 0 + 0 + 0 + 0 + 0 + 1 + 0)
+q.6
+write a javascript program to display the current day and time in the following order output: today is : day_name current time is: time
+function getCurrentDayAndTime() {
+  const now = new Date();
+
+  const dayFormatter = new Intl.DateTimeFormat("en-US", { weekday: "long" });
+  const timeFormatter = new Intl.DateTimeFormat("en-US", { timeStyle: "short" });
+
+  const dayName = dayFormatter.format(now);
+  const time = timeFormatter.format(now);
+
+  console.log(`Today is: ${dayName}`);
+  console.log(`Current time is: ${time}`);
+}
+
+getCurrentDayAndTime();
+
+
+Q.7 WRITE CURRENT DATE.
+function getCurrentDate() { 
+const now = new Date();
+ return now.toLocaleDateString("en-US"); 
+}
+ const currentDate = getCurrentDate(); 
+console.log("Current Date:", currentDate);
+
