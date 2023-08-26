@@ -32,17 +32,14 @@ return l*b;
 return [perimeter,area];
 }
 
-Q3 Namely functions:
+Q3 Write area/perimeter of rectangle using prompt.
 
-function area_perimeter()
-{
-var perimeter=function perimeter(l,b)
-{
-return 2*(l+b);
-}
-var area=function area(l,b);
-{
-return l*b;
-}
-return [perimeter,area];
+function rect(){
+    var l=parseInt(prompt("Enter length of rectangle : "));
+    var b=parseInt(prompt("Enter breadth of rectangle : "));
+    var area=l*b;
+    var peri=2*(l+b);
+    if(l<0||b<0)console.log("Area/Parimeter of rectangle canot be found .");
+    else {console.log("Area of rectangle is : ",area);
+         console.log("Perimeter of rectangle is : ",peri);}
 }
